@@ -1,0 +1,140 @@
+#:import threading threading
+#:import Factory kivy.factory.Factory
+
+<Button>
+    font_name:"Fonts/Oswald-VariableFont_wght.ttf"
+
+<Label>
+    font_name:"Fonts/Oswald-VariableFont_wght.ttf"
+
+<TextInput>
+    font_name:"Fonts/Oswald-VariableFont_wght.ttf"
+
+<ToggleButton>
+    font_name:"Fonts/Oswald-VariableFont_wght.ttf"
+
+ScreenManager:
+    id:manager
+    Screen:
+        name:"home_layout"
+        AnchorLayout:
+            anchor_x:"center"
+            anchor_y:"center"
+            BoxLayout:
+                orientation:"vertical"
+                size_hint:(1,1)
+                padding:5
+                spacing:5
+                BoxLayout:
+                    orientation:"horizontal"
+                    spacing:2
+                    Button:
+                        text:"Book Your Way"
+                        font_size:self.width/10
+                        on_release:
+                            threading.Thread(target=app.clock, args=(headerclock,), daemon=True).start()
+                            threading.Thread(target=app.date, args=(headerdate,), daemon=True).start()
+
+
+
+                            #threading.Thread(target=app.city, args=(headercity,), daemon=True).start()
+                            threading.Thread(target=app.temperature, args=(headertemperature,), daemon=True).start()
+                            #threading.Thread(target=app.humidity, args=(headerhumidity,), daemon=True).start()
+                            #threading.Thread(target=app.windspeed, args=(headerwindspeed,), daemon=True).start()
+                            app.initialize(disp)
+                            manager.transition.duration=0.3
+                            manager.current="chat_layout"
+                            manager.transition.direction="left"
+    Screen:
+        name:"chat_layout"
+        AnchorLayout:
+            size: root.width, root.height
+            anchor_x:"center"
+            anchor_y:"center"
+            BoxLayout:
+                orientation:"horizontal"
+
+                GridLayout:
+                    cols:1
+                    rows:3
+
+                    AnchorLayout:
+                        anchor_x:"center"
+                        size_hint:(1,0.125)
+                        
+                        Image:
+                            source:"Icons/header.png"
+                            allow_stretch:True
+                            keep_ratio:False
+
+                        BoxLayout:
+                            orientation:"horizontal"
+                            AnchorLayout:
+                                BoxLayout:
+                                    orientation:"horizontal"
+                                    BoxLayout:
+                                        orientation:"vertical"
+                                        Label:
+                                            id:headerclock
+                                            text:"00:00"
+                                            color: (1,1,1,1)
+                                            pos_hint: {"top":1}
+                                            font_size: 40
+                                            italic:True
+                                        Label:
+                                            id:headertemperature
+                                            text:"19.0C"
+                                            color: (1,1,1,1)
+                                            pos_hint: {"top":1}
+                                            font_size: 30
+                                            italic:True
+                            
+                            Label:
+                                id:headerdate
+                                text:"00:00:00"
+                                color: (1,1,1,1)
+                                pos_hint: {"top":1}
+                                font_size: 30
+                                italic:True
+ 
+                            AnchorLayout:
+                                BoxLayout:
+                                    orientation:"horizontal"
+                                    BoxLayout:
+                                        orientation:"vertical"
+                                        Image:
+                                            id:image
+                                            source:"cloudy.png"
+
+
+ 
+                    ScrollView:
+                        padding:30
+                        BoxLayout:
+                            id:disp
+                            orientation:"vertical"
+                            spacing:8
+                            padding:30
+                            size_hint:(1,None)
+                            height:4000
+                    BoxLayout:
+                        orientation:"horizontal"
+                        size_hint: (1,0.06)
+                        padding:2
+                        spacing:5
+                        TextInput:
+                            id:t_input
+                            text:"Hi"
+                            font_size:18
+                            multiline:False
+                            halign:"right"
+                            on_text_validate:app.send(t_input)
+                        Button:
+                            text:"Send"
+                            background_normal:"Icons/footer_2.png"
+                            background_down:"Icons/footer_1.png"
+                            size_hint: 0.2,1
+                            font_size: 16
+                            on_press:app.send(t_input)
+                
+   

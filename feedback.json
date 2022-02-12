@@ -1,0 +1,113 @@
+{
+  "welcome": [
+    "Hi!",
+    "Hello!",
+    "Hey!",
+    "Welcome!"
+  ],
+  "greeting": [
+    "Hello!",
+    "Hey!",
+    "Hi!",
+    "Welcome"
+  ],
+  "ask_name": [
+    "What's your name?",
+    "What can I call you?",
+    "How can I call you?",
+    "What should I call you?"
+  ],
+  "ask_make_booking": [
+    "%s, would you like to make a train booking or see potential delays?",
+    "Would you like to book a ticket or see potential train delays %s?",
+    "So, %s, would you like to make a booking or see potential delays?"
+  ],
+  "unknown_message": [
+    "Sorry, I don't understand.",
+    "Sorry, I didn't get that.",
+    "Oops! I don't understand."
+  ],
+  "ask_location": [
+    "Where are you planning on travelling from and to?",
+    "What locations are you travelling from and to?"
+  ],
+  "only_one_location": [
+    "We need both locations, not just one!"
+  ],
+  "wrong_date": [
+    "Sorry, the date you entered cannot be recognised.",
+    "Oops! The date entered cannot be recognised."
+  ],
+  "past_date": [
+    "Sorry! Date must not be in the past.",
+    "Oops! Date must not be in the past."
+  ],
+  "past_depart_date": [
+    "Date given is older than depart date.",
+    "Date must be after depart date."
+  ],
+  "ask_depart_date": [
+    "What date would you like to leave on?(In dd-mm-yy format!)?",
+    "What date would you like to depart?(In dd-mm-yy format!)?"
+  ],
+  "ask_depart_time": [
+    "What time would you like to leave at?(In 00:00 format!)?"
+  ],
+
+  "ask_is_return": [
+    "Do you want a return jouney?",
+    "Would you like a return jouney?"
+  ],
+  "ask_return_date": [
+    "What date would you like to come back on?(In dd-mm-yy format!)?",
+    "What date would you like to return?(In dd-mm-yy format!)?"
+  ],
+  "ask_return_time": [
+    "What time would you like to return at?(In 00:00 format!)?"
+  ],
+
+  "ticket_found_single": [
+    "Here is the cheapest single ticket we could find!"
+  ],
+  "ticket_found_return": [
+    "Here is the cheapest return ticket we could find!"
+  ],
+  "ticket_error": [
+    "Sorry, we could not find any results for the ticket you were looking for.",
+    "Sorry, we could not find any tickets for the jouney you are searching for."
+  ],
+  "make_another_booking": [
+    "Would you like to make another train booking or see potential delays?",
+    "Would you like to make another ticket booking or see potential train delays?"
+  ],
+
+  "confirm_booking": [
+    "Would you like to book this ticket?",
+    "Would you like to confirm and book this ticket?"
+  ],
+
+  "thank_you": [
+    "Thank you for using our services!",
+    "Thank you for using the chatbot!"
+  ],
+  "whats_next": [
+    "Would you like to book another ticket or see different potential train delays?",
+    "Do you now want to book a different ticket or see different train delays?"
+  ],
+
+  "ask_predict_location": [
+    "What is your current and destination stations?"
+  ],
+  "ask_predict_delay": [
+    "What is the current delay (in minutes)?",
+    "How long the train has been delayed for (in minutes)?"
+  ],
+  "prediction": [
+    "Your train is estimated to arrive on %s at your destination.",
+    "Your train is predicted to arrive on %s at your destination."
+  ],
+  "prediction_error": [
+    "Sorry! We were unable to predict the arrival time.",
+    "Sorry! We were unable to estimate the arrival time."
+  ]
+}
